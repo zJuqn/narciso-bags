@@ -63,6 +63,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
     renderCart();
   }
 
+  // Mobile nav toggle: inject small hamburger button and behavior
+  try{
+    const headerInner = document.querySelector('.header-inner');
+    const mainNav = document.querySelector('.main-nav');
+    if(headerInner && mainNav){
+      // avoid duplicate toggle
+      if(!document.querySelector('.mobile-toggle')){
+        const toggle = document.createElement('button');
+        toggle.className = 'mobile-toggle';
+        toggle.setAttribute('aria-label','Abrir menú');
+        toggle.innerHTML = '☰';
+        // insert before icons
+        const icons = headerInner.querySelector('.icons');
+        if(icons) headerInner.insertBefore(toggle, icons);
+        else headerInner.appendChild(toggle);
+
+        toggle.addEventListener('click', ()=>{
+          mainNav.classList.toggle('mobile-open');
+        });
+
+        // close menu when clicking a link
+        mainNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mainNav.classList.remove('mobile-open')));
+      }
+    }
+  }catch(e){ console.warn('mobile nav toggle error', e); }
+
   // CHATBOT - Initialize after DOM is ready
   setTimeout(initChatbot, 100);
 });

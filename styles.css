@@ -200,8 +200,26 @@ body{
   .header-inner{justify-content:space-between}
   .product-grid{grid-template-columns:1fr}
   .hero-text h1{font-size:34px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-image{order:-1}
+  .catalog-grid{grid-template-columns:1fr}
 
-/* chatbot */
+  /* Mobile menu toggle button (injected via JS) */
+  .mobile-toggle{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--gold);color:#fff;border-radius:8px;border:none;cursor:pointer;font-size:20px;margin-left:8px}
+  .main-nav.mobile-open{display:block;position:absolute;top:68px;left:0;right:0;background:#fff;padding:16px;border-top:1px solid #eee;box-shadow:0 8px 32px rgba(0,0,0,0.06)}
+  .main-nav.mobile-open a{display:block;padding:10px 0;margin:0}
+
+  .footer-inner{flex-direction:column;align-items:center;text-align:center;gap:12px}
+
+  /* Modal responsive tweaks */
+  .promo-content{padding:28px;max-width:92%;margin:0 16px}
+
+  /* Chatbot adjustments for small screens */
+  .chatbot-icon{width:50px;height:50px;font-size:22px}
+  .chatbot-window{width:320px;height:420px;bottom:72px}
+}
+
+/* chatbot base styles */
 .chatbot-widget{position:fixed;bottom:20px;right:20px;font-family:'Inter', system-ui, -apple-system;z-index:999}
 .chatbot-icon{width:60px;height:60px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;box-shadow:0 4px 16px rgba(201,167,92,0.3);transition:all 0.3s ease;animation:bounceIn 0.6s ease}
 .chatbot-icon:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(201,167,92,0.4)}
