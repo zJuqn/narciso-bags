@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Producto — Narciso Bags</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><div class="logo-mark">N</div><div class="logo-text">NARCISO BAGS</div></div>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+        <a href="collections.html">Tienda</a>
+        <a href="about.html">Acerca de</a>
+        <a href="contact.html">Contacto</a>
+      </nav>
+      <div class="icons">
+        <button class="icon-btn">🔍</button>
+        <a class="cart-btn" href="cart.html">👜 <span id="cart-count-3">0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <div class="container product-grid">
+      <aside class="thumbs" id="thumbs"></aside>
+
+      <div class="main-photo">
+        <img id="main-product-image" src="images/product-1-large.jpg" alt="Producto">
+      </div>
+
+      <aside class="product-details">
+        <h1 id="product-title">Producto</h1>
+        <p class="muted" id="product-sub">Descripción corta del producto.</p>
+        <div class="price" id="product-price">$0.00</div>
+
+        <p class="product-description" id="product-desc">Descripción larga del producto.</p>
+
+        <h4>Materiales y detalles</h4>
+        <ul class="details-list" id="product-details">
+          <!-- detalles dinámicos -->
+        </ul>
+
+        <div class="size-select">
+          <label>Tamaño</label>
+          <div class="sizes" id="sizes">
+            <button class="size-btn selected" data-size="S">Pequeño</button>
+            <button class="size-btn" data-size="M">Mediano</button>
+            <button class="size-btn" data-size="L">Grande</button>
+          </div>
+        </div>
+
+        <div class="add-actions">
+          <button id="add-to-cart" class="btn btn-gold">Agregar al carrito</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="logo-small"><div class="logo-mark">N</div></div>
+        <p class="muted">Inspirados en ti</p>
+      </div>
+      <div class="footer-links">
+        <a href="collections.html">Catálogo</a>
+        <a href="contact.html">Contacto</a>
+      </div>
+      <div class="footer-right muted">© 2024 Narciso Bags. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Productos de muestra (coincide con collections)
+    const PRODUCTS = {
+      "product-1": {
+        id:"product-1", name:"DALIA", price:165.000,
+        short:"Cartera artesanal con perlas beige y cadena dorada, elegante, equilibrada y transformadora.",
+        imageLarge:"images/product-1-large.jpg",
+        thumbs:["images/product-1.jpg","images/dalia-2.jpg", "images/product-1-large.jpg"],
+        desc:"Inspirada en la majestuosidad de la flor que le da nombre, Dalia es una pieza que combina simetría, delicadeza y fuerza interior. Fabricada a mano con perlas beige de 8 mm, dos elegantes argollas doradas y una cadena que realza su carácter clásico-moderno, esta cartera celebra la elegancia estructurada y la transformación sutil. Como los pétalos perfectamente dispuestos de una dalia, su diseño transmite equilibrio y determinación. Es el accesorio ideal para mujeres que expresan dignidad y creatividad en cada paso. Una joya artesanal para quienes ven en el cambio una oportunidad de florecer con estilo.",
+        details:["Perlas beige de 8 mm", "Cadena dorada clásica-moderna", "Diseño equilibrado y elegante"]
+      },
+      "product-2": {
+        id:"product-2", name:"Magnolia", price:155.000,
+        short:"Bolso rojo facetado con cadena dorada, poderoso, delicado y sofisticado.",
+        imageLarge:"images/product-2.jpg",
+        thumbs:["images/product-2.jpg","images/magnolia-2.jpg"],
+        desc:"Inspirada en la Magnolia, flor que simboliza la nobleza del alma, y el amor sereno, esta pieza celebra el equilibrio entre poder y delicadeza. El bolso Magnolia está elaborado con cuentas de acrílico facetado de 10 mm en un tono rojo profundo y vibrante. Su estructura elegante, acentuada con una cadena dorada de eslabones, transmite una presencia imponente que no necesita alzar la voz. Es un tributo a quienes irradian elegancia desde la quietud, a mujeres que saben que el verdadero lujo está en los detalles y que la belleza más poderosa es la que se muestra con sutileza. Una pieza inolvidable para quienes entienden que el arte también se lleva en la mano.",
+        details:["Cuentas rojas facetadas 10 mm", "Cadena dorada de eslabones", "Presencia poderosa y delicada"]
+      },
+      "product-3": {
+        id:"product-3", name:"Iris", price:155.000,
+        short:"Bolso lavanda iridiscente con asa removible y cadena dorada, etéreo y espiritual.",
+        imageLarge:"images/product-3.jpg",
+        thumbs:["images/product-3.jpg", "images/iris-2.jpg", "images/iris-3.jpg"],
+        desc:"flor que simboliza la esperanza, la sabiduría divina y el vínculo entre lo terrenal y lo celestial, esta pieza rinde homenaje a la luz interior y a la elegancia que trasciende. El bolso Iris está elaborado con cuentas de acrílico facetado de 10 mm en un tono lavanda iridiscente, que refleja matices tornasolados como destellos del arcoíris. Su diseño compacto cuenta con un asa tejida removible, una cadena dorada de eslabones , combinando versatilidad y distinción en cada detalle. Es una pieza para quienes caminan entre mundos, conectando lo visible con lo invisible, lo suave con lo firme. Un bolso celestial pensado para mujeres que iluminan desde la intuición, con estilo etéreo y alma vibrante",
+        details:["Cuentas lavanda iridiscentes", "Asa tejida removible", "Estilo etéreo y espiritual"]
+      },
+      "product-4": {
+        id:"product-4", name:"Amapola", price:185.000,
+        short:"Bolso rojo artesanal con perlas blancas y cadena dorada, apasionado y llamativo.",
+        imageLarge:"images/product-4.jpg",
+        thumbs:["images/product-4.jpg", "images/amapola-2.jpg"],
+        desc:"Inspirado en la intensidad de la flor Amapola (Papaver rhoeas), símbolo de belleza efímera, fuerza interior, sueño y pasión, este bolso es la primera pieza de nuestra segunda colección: Floralia. Amapola cautiva al instante con su vibrante cuerpo rojo, tejido a mano con cubos acrílicos de 10 mm, enmarcado por un contorno de perlas blancas del mismo tamaño que evocan elegancia y feminidad. Su forma estructurada resalta como una flor que florece con poder y decisión. Este bolso no solo es una pieza artesanal de alto impacto visual, sino también un homenaje a los espíritus apasionados y decididos. Lleva además una cadena dorada de excelente calidad, ideal para aportar versatilidad y lujo a cualquier look. Perfecto para ocasiones especiales, eventos o simplemente para quien desea llevar el arte con orgullo",
+        details:["Cubos acrílicos rojos 10 mm", "Perlas blancas en contorno", "Cadena dorada de alta calidad"]
+      },
+      "product-5": {
+        id:"product-5", name:"Freesia", price:165.000,
+        short:"Bolso ámbar con cadena dorada, delicado, romántico y discretamente elegante.",
+        imageLarge:"images/product-5.jpg",
+        thumbs:["images/product-5.jpg", "images/fresia-2.jpg"],
+        desc:"Tercera pieza de la colección, símbolo de ternura, inocencia refinada y gracia juvenil. Esta fabricado con cubos acrílicos rosados de 10 mm, destaca por su diseño ligero y brillo sutil. Cuenta con una elegante cadena y argollas doradas, en su interior guarda una bolsa de tela satinada, que añade un toque romántico y práctico al diseño. Freesia es ideal para momentos especiales o para mujeres que expresan su dulzura a través de los detalles. Un accesorio tierno, elegante y encantador, como un ramo de flores frescas.",
+        details:["Cubos rosados 10 mm", "Detalles dorados", "Bolsa interna satinada"]
+      },
+      "product-6": {
+        id:"product-6", name:"Anémona", price:155.000,
+        short:"Bolso ámbar con cadena dorada, delicado, romántico y discretamente elegante.",
+        imageLarge:"images/product-6.jpg",
+        thumbs:["images/product-6.jpg", "images/anemona-2.jpg", "images/hero-bag.jpg"],
+        desc:"Símbolo de sensibilidad, protección espiritual y belleza sutil, esta pieza es un homenaje al poder de lo delicado. El bolso está elaborado con cuentas de acrílico facetado de 10 mm en un cálido tono ámbar. Su estructura rectangular se complementa con una cadena dorada, otorgándole un aire refinado y envolvente. Como las lágrimas de Afrodita transformadas en flor, Anémona evoca un romanticismo sereno, ideal para quienes encuentran fortaleza en la ternura y elegancia en lo discreto. Es una pieza que no necesita imponerse para ser inolvidable.",
+        details:["Cuentas ámbar facetadas 10 mm", "Cadena dorada refinada", "Elegancia sutil y romántica"]
+      }
+    };
+
+    // al cargar, leer query param ?pid=product-1
+    (function(){
+      const url = new URL(location.href);
+      const pid = url.searchParams.get('pid') || 'product-1';
+      const p = PRODUCTS[pid] || PRODUCTS['product-1'];
+
+      document.getElementById('product-title').textContent = p.name;
+      document.getElementById('product-sub').textContent = p.short;
+      document.getElementById('product-price').textContent = `$${p.price.toFixed(2)}`;
+      document.getElementById('product-desc').textContent = p.desc;
+
+      const detailsEl = document.getElementById('product-details');
+      detailsEl.innerHTML = '';
+      p.details.forEach(d=>{
+        const li = document.createElement('li'); li.textContent = d; detailsEl.appendChild(li);
+      });
+
+      document.getElementById('main-product-image').src = p.imageLarge;
+
+      const thumbs = document.getElementById('thumbs');
+      thumbs.innerHTML = '';
+      p.thumbs.forEach(src=>{
+        const btn = document.createElement('button');
+        btn.className = 'thumb';
+        btn.innerHTML = `<img src="${src}" alt="">`;
+        btn.addEventListener('click', ()=> document.getElementById('main-product-image').src = src);
+        thumbs.appendChild(btn);
+      });
+
+      // añadir evento add to cart
+      document.getElementById('add-to-cart').addEventListener('click', ()=>{
+        const selectedSize = document.querySelector('.size-btn.selected')?.dataset.size || 'S';
+        const product = {
+          id: p.id,
+          name: p.name,
+          price: p.price,
+          image: p.imageLarge,
+          size: selectedSize,
+          qty: 1
+        };
+        addToCart(product);
+        alert('Producto agregado al carrito');
+      });
+
+    })();
+  </script>
+</body>
+</html>
