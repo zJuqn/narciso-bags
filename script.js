@@ -89,6 +89,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
   }catch(e){ console.warn('mobile nav toggle error', e); }
 
+  // Use lupa (search) icon as mobile menu trigger on small screens
+  try{
+    document.querySelectorAll('.icon-btn').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        if(window.innerWidth <= 768){
+          e.preventDefault();
+          const mainNav = document.querySelector('.main-nav');
+          if(mainNav) mainNav.classList.toggle('mobile-open');
+        }
+      });
+    });
+  }catch(err){ console.warn('lupa toggle error', err); }
+
   // CHATBOT - Initialize after DOM is ready
   setTimeout(initChatbot, 100);
 });
