@@ -63,31 +63,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     renderCart();
   }
 
-  // Mobile nav toggle: inject small hamburger button and behavior
-  try{
-    const headerInner = document.querySelector('.header-inner');
-    const mainNav = document.querySelector('.main-nav');
-    if(headerInner && mainNav){
-      // avoid duplicate toggle
-      if(!document.querySelector('.mobile-toggle')){
-        const toggle = document.createElement('button');
-        toggle.className = 'mobile-toggle';
-        toggle.setAttribute('aria-label','Abrir menú');
-        toggle.innerHTML = '☰';
-        // insert before icons
-        const icons = headerInner.querySelector('.icons');
-        if(icons) headerInner.insertBefore(toggle, icons);
-        else headerInner.appendChild(toggle);
-
-        toggle.addEventListener('click', ()=>{
-          mainNav.classList.toggle('mobile-open');
-        });
-
-        // close menu when clicking a link
-        mainNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mainNav.classList.remove('mobile-open')));
-      }
-    }
-  }catch(e){ console.warn('mobile nav toggle error', e); }
+  // mobile-toggle injection removed: using search icon as mobile trigger
 
   // Use lupa (search) icon as mobile menu trigger on small screens
   try{
