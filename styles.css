@@ -285,7 +285,7 @@ body{
 
   /* Chatbot adjustments for small screens */
   .chatbot-icon{width:50px;height:50px;font-size:22px}
-  .chatbot-window{width:320px;height:420px;bottom:72px}
+  .chatbot-window{width:calc(100% - 20px);max-width:none;height:400px;bottom:80px;right:10px;left:10px;margin:0 auto}
 }
 
 /* On larger screens, constrain catalog image heights for uniform grid */
@@ -297,7 +297,7 @@ body{
 .chatbot-widget{position:fixed;bottom:20px;right:20px;font-family:'Inter', system-ui, -apple-system;z-index:999}
 .chatbot-icon{width:60px;height:60px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;cursor:pointer;box-shadow:0 4px 16px rgba(201,167,92,0.3);transition:all 0.3s ease;animation:bounceIn 0.6s ease}
 .chatbot-icon:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(201,167,92,0.4)}
-.chatbot-window{position:absolute;bottom:80px;right:0;width:360px;height:480px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12);display:flex;flex-direction:column;opacity:0;transform:scale(0.9) translateY(20px);pointer-events:none;transition:all 0.3s ease}
+.chatbot-window{position:fixed;bottom:100px;right:10px;left:10px;width:auto;max-width:360px;height:480px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12);display:flex;flex-direction:column;opacity:0;transform:scale(0.9) translateY(20px);pointer-events:none;transition:all 0.3s ease;margin:0 auto}
 .chatbot-window.active{opacity:1;transform:scale(1) translateY(0);pointer-events:all}
 .chatbot-header{background:var(--gold);color:#fff;padding:16px;border-radius:12px 12px 0 0;display:flex;justify-content:space-between;align-items:center}
 .chatbot-header h3{margin:0;font-size:16px;font-weight:600}
